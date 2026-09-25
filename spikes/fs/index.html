@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <title>vicara · folder test</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 16px;
+        background: #121212;
+        color: #e6e6e6;
+        font: 15px/1.45 system-ui, sans-serif;
+      }
+      h1 { font-size: 1.2rem; margin: 0 0 4px; }
+      p.hint { color: #9a9a9a; margin: 0 0 16px; font-size: 0.9rem; }
+      .buttons { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 16px; }
+      button {
+        padding: 12px 8px;
+        font: inherit;
+        color: inherit;
+        background: #242424;
+        border: 1px solid #3a3a3a;
+        border-radius: 8px;
+      }
+      button.primary { background: #3b2f5c; border-color: #5a4a8a; grid-column: 1 / -1; }
+      button:active { background: #333; }
+      #folder { color: #b9a8ff; margin-bottom: 12px; font-size: 0.9rem; }
+      #log {
+        white-space: pre-wrap;
+        word-break: break-word;
+        font: 12px/1.5 ui-monospace, monospace;
+        background: #1a1a1a;
+        border: 1px solid #2a2a2a;
+        border-radius: 8px;
+        padding: 10px;
+        min-height: 200px;
+      }
+      .pass { color: #7ddc8a; }
+      .fail { color: #ff7a7a; }
+      .info { color: #9ab8ff; }
+    </style>
+  </head>
+  <body>
+    <h1>vicara · folder test</h1>
+    <p class="hint">
+      Pick an empty folder made just for this test (for example
+      <code>Documents/vicara-test</code>), then run the tests.
+    </p>
+    <div id="folder">No folder selected.</div>
+    <div class="buttons">
+      <button class="primary" id="pick">1. Pick folder</button>
+      <button class="primary" id="run">2. Run all tests</button>
+      <button id="restore">Reconnect saved folder</button>
+      <button id="env">Environment info</button>
+      <button id="slow">Slow write (kill test)</button>
+      <button id="check-slow">Check slow-write file</button>
+      <button id="copy">Copy log</button>
+      <button id="clear">Clear log</button>
+    </div>
+    <div id="log"></div>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>
